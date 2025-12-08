@@ -1,0 +1,209 @@
+<!-- TEST VERSION: 2025-12-03 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDish | Digital Menu System</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="SmartDish - Digital restaurant menu & ordering system">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>SmartDish</h1>
+        <h4>Digital Menu & Order System</h4>
+        <nav>
+            <a href="#Home">Home</a>
+            <a href="#Menu">Menu</a>
+            <a href="#MyOrder">My Order</a>
+            <a href="#contactUs">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section id="Home">
+        <h3>Welcome To SmartDish</h3>
+        <p class="my-p"><strong>Scan, Order, and Enjoy your meal!</strong></p>
+        <button class="main-btn" id="view-menu-btn">View Menu</button>
+    </section>
+
+    <!-- QR CODE LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <!-- MENU -->
+    <section id="Menu">
+        <h2 class="h2-menu">Our Menu</h2>
+
+        <!-- MEALS -->
+        <section class="Menu-Part1">
+            <h3 class="h3-menu">Meals</h3>
+            <div class="meal">
+                <img src="images/cheeceburger.jpg" alt="Cheeseburger" width="200" height="200">
+                <h4>Cheeseburger</h4>
+                <p>Price: $8.99</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="meal">
+                <img src="images/pizza.jpg" alt="Pizza" width="200" height="200">
+                <h4>Pizza</h4>
+                <p>Price: $7.99</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="meal">
+                <img src="images/Fries.jpg" alt="Fries" width="200" height="200">
+                <h4>Fries</h4>
+                <p>Price: $4.21</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="meal">
+                <img src="images/spaghetti.jpg" alt="Spaghetti" width="200" height="200">
+                <h4>Spaghetti</h4>
+                <p>Price: $6.35</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="meal">
+                <img src="images/Hotdog.jpg" alt="Hot Dog" width="200" height="200">
+                <h4>Hot Dog</h4>
+                <p>Price: $5.25</p>
+                <button>Add to Order</button>
+            </div>
+        </section>
+
+        <!-- DRINKS -->
+        <section class="Menu-Part2">
+            <h3 class="h3-Drinks">Drinks</h3>
+            <div class="Drink">
+                <img src="images/water.jpg" alt="Water" width="200" height="200">
+                <h4>Water</h4>
+                <p>Price: $1.20</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Drink">
+                <img src="images/cola.jpg" alt="Cola" width="200" height="200">
+                <h4>Cola</h4>
+                <p>Price: $2.23</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Drink">
+                <img src="images/Tea.jpg" alt="Tea" width="200" height="200">
+                <h4>Tea</h4>
+                <p>Price: $2</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Drink">
+                <img src="images/koktail.jpg" alt="Koktail" width="200" height="200">
+                <h4>Koktail</h4>
+                <p>Price: $5</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Drink">
+                <img src="images/cappuccino.jpg" alt="Cappuccino" width="200" height="200">
+                <h4>Cappuccino</h4>
+                <p>Price: $3</p>
+                <button>Add to Order</button>
+            </div>
+        </section>
+
+        <!-- SWEETS -->
+        <section class="Menu-Part3">
+            <h3 class="h3-Sweets">Sweets</h3>
+            <div class="Sweet">
+                <img src="images/cheesecake.jpg" alt="Cheesecake" width="200" height="200">
+                <h4>Cheesecake</h4>
+                <p>Price: $8.50</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Sweet">
+                <img src="images/brownie.jpg" alt="Brownie" width="200" height="200">
+                <h4>Brownie</h4>
+                <p>Price: $6.50</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Sweet">
+                <img src="images/tiramisu.jpg" alt="Tiramisu" width="200" height="200">
+                <h4>Tiramisu</h4>
+                <p>Price: $7.30</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Sweet">
+                <img src="images/donut.jpg" alt="Donut" width="200" height="200">
+                <h4>Donut</h4>
+                <p>Price: $5</p>
+                <button>Add to Order</button>
+            </div>
+            <div class="Sweet">
+                <img src="images/applepie.jpg" alt="Apple Pie" width="200" height="200">
+                <h4>Apple Pie</h4>
+                <p>Price: $4.30</p>
+                <button>Add to Order</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- MY ORDER -->
+    <section id="MyOrder">
+        <h2 class="h2-Myorder">My Order</h2>
+        <p id="empty-text"><strong>You haven't added any items yet!</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="order-body"></tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total:</strong></td>
+                    <td id="total-price">$0.00</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <button id="confirm-order">Confirm Order</button>
+
+        <!-- ORDER SUMMARY -->
+        <div id="order-summary"
+            style="display:none; margin-top:20px; padding:15px; background:rgba(255,255,255,0.9); border:2px solid brown; border-radius:10px;">
+            <h3>Order Summary</h3>
+            <ul id="order-summary-list"></ul>
+            <strong id="order-summary-total"></strong>
+        </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section id="contactUs">
+        <h2 class="h2-contactUs">Contact Us</h2>
+        <p><strong>Phone:</strong> +970 59 123 4567</p>
+        <p><strong>Email:</strong> smartdish@gmail.com</p>
+        <p><strong>Location:</strong> Ramallah, Palestine</p>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" placeholder="Write your message here"></textarea>
+            <button type="submit" class="send-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- QR CODE -->
+    <section id="QRCodeSection">
+        <p id="qrcode-text">Scan to Order</p>
+        <div id="qrcode"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="Footer">
+        <p>© 2025 SmartDish. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

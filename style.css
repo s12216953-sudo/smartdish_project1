@@ -1,0 +1,306 @@
+/* ===== GENERAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background: linear-gradient(90deg, #ff8800, #ffa733);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+header h4 {
+    margin: 0 0 12px 0;
+    color: white;
+    opacity: 0.9;
+    font-size: 15px;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+nav a:hover {
+    transform: scale(1.12);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== BODY BACKGROUND ===== */
+body {
+    background-image: url("https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Ch=1335%2Cq=85%2Cw=2000/wp-content/uploads/national-fast-food-day.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* ===== HOME SECTION ===== */
+#Home {
+    padding: 100px 20px;
+    margin-top: 170px;
+    background: rgba(255, 255, 255, 0.6);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+}
+
+#Home h3 {
+    font-size: 32px;
+    color: brown;
+}
+
+.my-p {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#Home button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: brown;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+#Home button:hover {
+    background-color: rgb(78, 0, 0);
+    transform: scale(1.08);
+}
+
+/* ===== SECTION TITLES ===== */
+.h2-menu,
+.h2-Myorder,
+.h2-contactUs {
+    font-size: 32px;
+    color: brown;
+    padding: 12px 25px;
+    background-color: aliceblue;
+    display: inline-block;
+    margin: 50px auto 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SUBHEADERS ===== */
+.h3-menu,
+.h3-Drinks,
+.h3-Sweets {
+    font-size: 26px;
+    color: brown;
+    margin: 25px 0;
+    background-color: bisque;
+    width: 100%;
+    border: 3px solid black;
+    padding: 12px 0;
+    border-radius: 6px;
+}
+
+/* ===== MENU CARDS ===== */
+.meal,
+.Drink,
+.Sweet {
+    display: inline-block;
+    margin: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.meal:hover,
+.Drink:hover,
+.Sweet:hover {
+    transform: translateY(-7px);
+}
+
+.meal img,
+.Drink img,
+.Sweet img {
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.meal img:hover,
+.Drink img:hover,
+.Sweet img:hover {
+    transform: scale(1.1);
+}
+
+/* ===== BUTTONS ===== */
+.meal button,
+.Drink button,
+.Sweet button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.meal button:hover,
+.Drink button:hover,
+.Sweet button:hover {
+    background-color: rgb(78, 0, 0);
+    transform: scale(1.07);
+}
+
+/* ===== ORDER TABLE ===== */
+table {
+    margin: 20px auto;
+    width: 85%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+th,
+td {
+    padding: 14px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: linear-gradient(90deg, orange, #ffb84d);
+    color: white;
+    font-size: 19px;
+}
+
+#confirm-order {
+    padding: 12px 25px;
+    background-color: green;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+#confirm-order:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+/* ===== CONTACT FORM ===== */
+form {
+    margin-top: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+}
+
+input,
+textarea {
+    width: 80%;
+    padding: 12px;
+    margin: 10px;
+    border: 2px solid brown;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(90deg, #ff8800, #ffa733);
+    color: white;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+/* ===== QR CODE FIXED BOTTOM LEFT WITH TEXT ===== */
+#QRCodeSection {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 160px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid brown;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#QRCodeSection #qrcode-text {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#QRCodeSection #qrcode {
+    width: 150px;
+    height: 150px;
+}
