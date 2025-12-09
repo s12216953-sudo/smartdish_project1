@@ -124,17 +124,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==== QR CODE GENERATION ====
-    const qrcodeContainer = document.getElementById("qrcode");
-    const localIP = "192.168.1.79"; // ضع هنا الـ IP الخاص بك
-    const currentURL = `http://${localIP}/smartdish/index.html`;
+const qrcodeContainer = document.getElementById("qrcode");
 
-    new QRCode(qrcodeContainer, {
-        text: currentURL,
-        width: 150,
-        height: 150,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
+// الحصول على الرابط الحالي تلقائياً بما فيه الـ IP
+let currentURL = window.location.href;
+
+// إذا كنت داخل ملف واحد مثل index.html فقط
+// نضمن إزالة اسم الملف لإعطاء رابط صحيح
+currentURL = currentURL.split("#")[0]; // بدون هاش
+currentURL = currentURL.split("?")[0]; // بدون بارامترات
+
+new QRCode(qrcodeContainer, {
+    text: currentURL,
+    width: 150,
+    height: 150,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
+
+   
 
 });
+
