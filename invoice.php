@@ -1,24 +1,20 @@
 <?php
-// invoice.php
 
-// الاتصال بقاعدة البيانات
 $servername = "localhost";
-$username = "root"; // غيّر حسب إعدادك
-$password = "";     // غيّر حسب إعدادك
-$dbname = "smartdish"; // اسم قاعدة البيانات
+$username = "root"; 
+$password = "";     
+$dbname = "smartdish"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// الحصول على order_id من الرابط
 if (!isset($_GET['order_id'])) {
     die("No order specified!");
 }
 $order_id = intval($_GET['order_id']);
 
-// استعلام لجلب بيانات الطلب
 $order_sql = "SELECT * FROM orders WHERE order_id = $order_id";
 $order_result = $conn->query($order_sql);
 if ($order_result->num_rows === 0) {
@@ -26,7 +22,6 @@ if ($order_result->num_rows === 0) {
 }
 $order = $order_result->fetch_assoc();
 
-// استعلام لجلب عناصر الطلب
 $items_sql = "SELECT * FROM order_items WHERE order_id = $order_id";
 $items_result = $conn->query($items_sql);
 ?>
@@ -78,3 +73,4 @@ $items_result = $conn->query($items_sql);
     </div>
 </body>
 </html>
+
