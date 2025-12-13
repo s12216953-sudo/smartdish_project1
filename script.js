@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const addButtons = document.querySelectorAll(".meal button, .Drink button, .Sweet button");
 
-    // إضافة منتج إلى الطلب عند الضغط على زر
+    
     addButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             const card = btn.parentElement;
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // تحديث جدول الطلبات
     function updateOrderTable() {
         orderTableBody.innerHTML = "";
         let total = 0;
@@ -59,13 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
         totalCell.textContent = `$${total.toFixed(2)}`;
     }
 
-    // إزالة عنصر من الطلب
     window.removeItem = function (index) {
         order.splice(index, 1);
         updateOrderTable();
     }
 
-    // تأكيد الطلب وعرض الملخص
     document.getElementById("confirm-order").addEventListener("click", () => {
         if (order.length === 0) return alert("You have no items to confirm!");
 
@@ -82,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         summaryTotal.textContent = `Total: $${total.toFixed(2)}`;
         summaryBox.style.display = "block";
 
-        // إرسال الطلب إلى السيرفر
         fetch("saveorder.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -126,11 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==== QR CODE GENERATION ====
 const qrcodeContainer = document.getElementById("qrcode");
 
-// الحصول على الرابط الحالي تلقائياً بما فيه الـ IP
 let currentURL = window.location.href;
 
-// إذا كنت داخل ملف واحد مثل index.html فقط
-// نضمن إزالة اسم الملف لإعطاء رابط صحيح
 currentURL = currentURL.split("#")[0]; // بدون هاش
 currentURL = currentURL.split("?")[0]; // بدون بارامترات
 
@@ -146,4 +139,5 @@ new QRCode(qrcodeContainer, {
    
 
 });
+
 
