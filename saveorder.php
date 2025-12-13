@@ -14,20 +14,17 @@ if($conn->connect_error){
     exit;
 }
 
-// حساب الإجمالي
 $total_price = 0;
 foreach($input['orders'] as $item){
     $total_price += $item['total'];
 }
 
-// إدخال الطلب الرئيسي
 $stmt = $conn->prepare("INSERT INTO orders (total_price) VALUES (?)");
 $stmt->bind_param("d", $total_price);
 $stmt->execute();
 $order_id = $stmt->insert_id;
 $stmt->close();
 
-// إدخال العناصر
 foreach($input['orders'] as $item){
     $stmt = $conn->prepare("INSERT INTO order_items (order_id, item_name, quantity, price) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("isid", $order_id, $item['name'], $item['quantity'], $item['price']);
@@ -39,3 +36,4 @@ $conn->close();
 
 echo json_encode(["status"=>"success","order_id"=>$order_id]);
 ?>
+
